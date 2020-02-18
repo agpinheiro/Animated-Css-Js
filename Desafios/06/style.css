@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background-color: #6f7579;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin: 50px 0 0 20px;
+  color: white;
+}
+
+form {
+  margin: 20px 0;
+  background-color: white;
+  padding: 30px 25px;
+  border-radius: 5px;
+}
+
+form .input-block {
+  margin-bottom: 20px;
+}
+
+form .input-block label {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+}
+
+form .input-block input {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  padding: 7px;
+  font-size: 16px;
+  color: #6f7579;
+  border-radius: 2px;
+  border: 1px solid #333;
+  outline-color: #6f7579;
+}
+
+form .btn-login {
+  display: block;
+  min-width: 120px;
+  border: none;
+  background-color: #6f7579;
+  color: white;
+  border-radius: 25px;
+  margin: auto;
+  padding: 7px;
+}
+
+/* Aparição  */
+
+h1 {
+  animation-name: moveBt;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+form {
+  overflow: hidden;
+}
+
+form .input-block:nth-child(1) {
+  animation-name: moveRl;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+
+form .input-block:nth-child(2) {
+  animation-name: moveLr;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
+}
+
+form .btn-login {
+  animation-name: moveTb;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+}
+
+.form-hide {
+  animation-name: moveBotton;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.h1-hide {
+  animation-name: moveTop;
+  animation-duration: 0.9s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+/*Animações*/
+
+@keyframes moveRl {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateX(-80%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes moveLr {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateX(+80%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes moveTb {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(+80%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes moveBt {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(-80%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes moveBotton {
+  from {
+    transform: scale(1) translateY(0);
+  }
+  to {
+    transform: scale(0.9) translateY(100vh);
+  }
+}
+
+@keyframes moveTop {
+  from {
+    transform: scale(1) translateY(0);
+  }
+  to {
+    transform: scale(0.9) translateY(-100vh);
+  }
+}
+
+/* Vibração de erro */
+
+form.validate-error {
+  animation-name: vib;
+  animation-duration: 0.3s;
+  animation-iteration-count: 2;
+  animation-timing-function: linear;
+}
+
+@keyframes vib {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25%,
+  75% {
+    transform: translateX(-15%);
+  }
+  50% {
+    transform: translateX(15%);
+  }
+}
